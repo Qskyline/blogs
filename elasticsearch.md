@@ -6,9 +6,12 @@
 		base_dir=$global_base_dir
 	fi
 
-	##创建临时目录存储安装包
+	##创建存储安装包的临时目录
 	install_dir=/tmp/install
 	mkdir -p install_dir
+
+	##定义服务ip和端口
+	service_ip_port=ip:port
 
 	##添加环境ip和主机名的映射
 	hosts_add=(
@@ -62,6 +65,18 @@
 	cd elasticsearch-head
 	npm install
 	nohup npm run start &   #http://ip:9100
+
+	##安装定时任务清理es中过期的index
+	echo '#!/bin/bash
+	keep_days=5
+	es_ip_port='$service_ip_port'
+	time=`date +%Y-%m-%d -d "$keep_days days ago"`
+	index=`curl -XGET http://$es_ip_port/_cat/indices?v|awk '"'"'{print $3}'"'"'|grep "$time"`
+	for i in $index; do
+	  curl -X DELETE "http://$es_ip_port/${i}"
+	done' > $es_base_dir/clear.sh
+	chmod -R 755 $es_base_dir/clear.sh
+	echo "59 23 * * * $es_base_dir/clear.sh" >> /var/spool/cron/root
 
 ### Configure
 配置文件路径:$base_dir/elasticsearch-6.3.0/config/elasticsearch.yml
