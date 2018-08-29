@@ -102,5 +102,5 @@
 	http.cors.allow-origin: "*"
 	discovery.zen.ping.unicast.hosts: ["node1", "node2", "node3"]   #集群节点信息,用于互相发现,协调选主
 
-### 运维
+### Operation
 	su - elsearch -s /bin/sh -c "/kingdee/elasticsearch-6.3.0/bin/elasticesrarch -d"   #启动
