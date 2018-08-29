@@ -28,6 +28,7 @@
 	mkdir -p $redis_base_dir/bin $redis_base_dir/conf $redis_base_dir/logs $redis_base_dir/run $base_dir/data/redis
     cp -fr $base_dir/redis_temp/src/{mkreleasehdr.sh,redis-benchmark,redis-check-aof,redis-check-dump,redis-cli,redis-sentinel,redis-server,redis-trib.rb} $redis_base_dir/bin
     cp -fr $base_dir/redis_temp/{redis.conf,sentinel.conf} $redis_base_dir/conf
+    rm -fr $base_dir/redis_temp
 
 ### Configure
 配置文件路径：$redis_base_dir/conf/redis.conf
