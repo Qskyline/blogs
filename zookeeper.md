@@ -24,7 +24,7 @@
 	JAVA_HOME=/jdk
 	if [ ! -d $JAVA_HOME ]; then
 		cd $base_dir
-		wget https://ierp.kingdee.com:2026/software/jdk-8u172-linux-x64.tar
+		wget --user=ierp --password=Kingdee@2018 https://ierp.kingdee.com:2026/software/jdk-8u172-linux-x64.tar
 		tar -xf jdk-8u172-linux-x64.tar
 		mv -fr jdk-8u172-linux-x64.tar $install_dir/
 		ln -s $base_dir/jdk-8u172-linux-x64 /jdk
