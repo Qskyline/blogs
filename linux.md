@@ -1,4 +1,5 @@
-### iptables
+## iptables
+
     /sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT
     /etc/rc.d/init.d/iptables save
     /etc/rc.d/init.d/iptables restart
@@ -15,7 +16,8 @@
 
 -----------
 
-### reset password of root in centos7
+## reset password of root in centos7
+
 1. 启动过程,'e'键进入启动参数配置界面
 2. LANG=zh_CN.UTF-8后加入'init=/bin/sh', ctrl+x 退出配置界面
 3. mount –o remount,rw /   --挂载文件系统到根目录
@@ -24,3 +26,37 @@
 6. exec /sbin/init 或 exec /sbin/reboot 重启OS
 
 ----------
+
+## samba
+
+**configure**
+
+    ##/etc/samba/smb.conf
+    [global]
+        workgroup = WORKGROUP
+        security = user
+        #security = share
+        passdb backend = tdbsam
+        printing = cups
+        printcap name = cups
+        load printers = yes
+        cups options = raw
+
+    [huawei]
+        comment = ierp-huawei-custom
+        path = /var/kingdee/share/samba/huawei
+        valid users = build
+        browseable = yes
+        writable = yes
+        public = no
+        create mask = 0600
+        directory mask = 0775
+
+**commands**
+
+    pdbedit -L   #列出samba用户
+    pdbedit -Lv   #列出samba用户详细信息
+    smbpasswd -a userName   #添加samba用户
+    smbpasswd -x userName   #删除samba用户
+    net use * /del /y   #Windows中此命令断开所有连接,用于解决"不允许一个用户使用一个以上用户名与一个服务器或共享资源的多重连接"问题
+    net use   #Windows中此命令可以查看当前本机与网络资源的连接,例如驱动器映射、IPC连接等
