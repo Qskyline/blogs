@@ -60,3 +60,11 @@
     smbpasswd -x userName   #删除samba用户
     net use * /del /y   #Windows中此命令断开所有连接,用于解决"不允许一个用户使用一个以上用户名与一个服务器或共享资源的多重连接"问题
     net use   #Windows中此命令可以查看当前本机与网络资源的连接,例如驱动器映射、IPC连接等
+
+------
+
+
+## tcpdump
+
+    tcpdump -nnvvvXXe -c 20 -s 0 -i lo0 tcp port 8080 and host 127.0.0.1   #terminal monitor
+    tcpdump -nnvvvXXe -c 20 -s 0 -i lo0 tcp port 8080 and host 127.0.0.1 -w ~/net.cap   #for analysing with Wireshark
