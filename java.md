@@ -29,7 +29,7 @@
     yum install -y httpd
 
     ## download Gerrit
-    wget -O $install_dir/gerrit-2.16.3.war https://gerrit-releases.storage.googleapis.com/gerrit-2.16.3.war
+    wget -P $install_dir/ https://gerrit-releases.storage.googleapis.com/gerrit-2.16.3.war
 
     ## install Gerrit
     java -jar $install_dir/gerrit-2.16.3.war init -d $gerrit_dir
