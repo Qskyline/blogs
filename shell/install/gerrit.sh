@@ -1,3 +1,5 @@
+#/bin/bash
+
 ## prepare a mysql db connection
 ## install and configure java
 ## prepare a nginx
