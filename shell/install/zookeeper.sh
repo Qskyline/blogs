@@ -1,3 +1,5 @@
+#/bin/bash
+
 ##定义根目录
 base_dir=/kingdee
 if [ -n $global_base_dir ]; then
