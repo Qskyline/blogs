@@ -101,7 +101,7 @@ if [ -z "$param1_path" ] || [ -z "$param2_path" ]; then
 fi
 
 #获取机器信息
-. fetch_machine_info.sh
+. $dirPath"/fetch_machine_info.sh"
 
 #计算scp命令
 if [ -n "$param1_host" ] && [ -z "$param2_host" ]; then
@@ -113,15 +113,15 @@ elif [ -n "$param1_host" ] && [ -n "$param2_host" ]; then
     help_scp_command="scp -r -P "$port" "$loginuser"@"$ip":"$param1_path" "$default_local_path
     #再次获取机器信息
     filter=$param2_host
-    . fetch_machine_info.sh
+    . $dirPath"/fetch_machine_info.sh"
     scp_command="scp -r -P "$port" "$default_local_path"/"$(basename $param1_path)" "$loginuser"@"$ip":"$param2_path
 fi
 
 #执行复制操作
 if [ -n "$help_scp_command" ]; then
-    ./copy.sh "$help_scp_command" $help_loginpass
+    $dirPath"/copy.sh" "$help_scp_command" $help_loginpass
 fi
-./copy.sh "$scp_command" $loginpass
+$dirPath"/copy.sh" "$scp_command" $loginpass
 
 #清除临时文件
 if [ -n "$help_scp_command" ]; then

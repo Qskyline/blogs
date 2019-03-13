@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#定义安装目录(运行必须)
+dirPath="/usr/local/lib/my_cmd"
+
 #默认信息
 logintype="password"
 ip="---"
@@ -28,7 +31,7 @@ driver_type="qssh"
 filter=$1
 
 #获取机器信息
-. fetch_machine_info.sh
+. $dirPath"/fetch_machine_info.sh"
 
 #输出机器具体的配置信息
 # echo "*****************************************************************************"
@@ -52,7 +55,7 @@ filter=$1
 #执行登陆操作
 if [ "$driver_type" == "qssh" ]; then
    #调用expect脚本
-   "./login.sh" \
+   $dirPath"/login.sh" \
    $logintype \
    $ip \
    $port \
