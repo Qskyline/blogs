@@ -18,7 +18,7 @@ param2_path=
 
 #默认下载路径
 default_local_path=~/Downloads
-default_remote_path=~
+default_remote_path="~"
 
 #参数处理
 if [ -n "$1" ] && [ -z "$2" ]; then
@@ -80,7 +80,7 @@ elif [ -z "$param1_host" ] && [ -n "$param2_host" ]; then
     fi
     if [ -z "$param2_path" ]; then
         echo -n "远端目标目录未指定,使用默认路径("$default_remote_path")."
-        $param2_path=$default_remote_path
+        param2_path=$default_remote_path
     fi
 else
     filter=$param1_host
@@ -90,7 +90,7 @@ else
     fi
     if [ -z "$param2_path" ]; then
         echo -n "远端目标目录未指定,使用默认路径("$default_remote_path")."
-        $param2_path=$default_remote_path
+        param2_path=$default_remote_path
     fi
 fi
 
