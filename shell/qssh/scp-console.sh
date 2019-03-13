@@ -79,7 +79,7 @@ elif [ -z "$param1_host" ] && [ -n "$param2_host" ]; then
         read param1_path
     fi
     if [ -z "$param2_path" ]; then
-        echo -n "远端目标目录未指定,使用默认路径("$default_remote_path")."
+        echo "远端目标目录未指定,使用默认路径("$default_remote_path")."
         param2_path=$default_remote_path
     fi
 else
@@ -89,7 +89,7 @@ else
         read param1_path
     fi
     if [ -z "$param2_path" ]; then
-        echo -n "远端目标目录未指定,使用默认路径("$default_remote_path")."
+        echo "远端目标目录未指定,使用默认路径("$default_remote_path")."
         param2_path=$default_remote_path
     fi
 fi
