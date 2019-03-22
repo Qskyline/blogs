@@ -61,7 +61,7 @@
     #每一次aof记录的添加,都会检测当前aof文件的尺寸;每一次rewrite之后,redis都会记录下此时新的aof文件的大小;auto-aof-rewrite-percentage参数指定下次rewrite的触发条件
     auto-aof-rewrite-percentage 100
 
-    ##redis内存淘汰策略,有6个合法值:noeviction/allkeys-lru/allkeys-random/volatile-lru/volatile-random/volatile-ttl
+    ##redis内存淘汰策略,有6个合法值:noeviction(default)/allkeys-lru/allkeys-random/volatile-lru/volatile-random/volatile-ttl
     maxmemory-policy volatile-lru
 
 **哨兵模式**
