@@ -7,6 +7,7 @@
 ![container-develop](../assets/container-develop.png)
 
 ### 2. kubernetes是什么？
+
 容器编排工具，提供弹性扩容、故障转移、服务发现、负载均衡、存储编排等服务。
 
 ### 3. kubernetes组成简介
@@ -20,17 +21,20 @@
 * pod
 
 ### 4. kubernetes模型
-**架构简图**
-![k8s-model](../assets/k8s-model.png)
 
-**流程图**
+架构简图
+![k8s-structure](../assets/k8s-structure.png)
+
+流程图
 ![k8s-flow](../assets/k8s-flow.png)
 
 ### 5. 网络模型
+
 **docker**
 1. 相同主机上的容器如何互相访问？
 * container模式
 * bridge模式
+
 2. 不同主机上的容器如何互相访问？
 * 搭建overlay网络（flannel）
 ![flannel](../assets/flannel.png)
@@ -47,5 +51,6 @@
 * LoadBalancer
 
 ### 6. kubernetes存储
+
 * 直接存储
 * nas
