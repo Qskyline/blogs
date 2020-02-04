@@ -63,8 +63,13 @@
 
 ------
 
-
 ## tcpdump
 
     tcpdump -nnvvvXXe -c 20 -s 0 -i lo0 tcp port 8080 and host 127.0.0.1   #terminal monitor
     tcpdump -nnvvvXXe -c 20 -s 0 -i lo0 tcp port 8080 and host 127.0.0.1 -w ~/net.cap   #for analysing with Wireshark
+
+-----
+
+## MAC
+
+    sudo sntp -sS time.asia.apple.com
