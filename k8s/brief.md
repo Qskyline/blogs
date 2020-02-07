@@ -32,23 +32,21 @@
 
 **docker**
 1. 相同主机上的容器如何互相访问？
-* container模式
-* bridge模式
-
+    * container模式
+    * bridge模式
 2. 不同主机上的容器如何互相访问？
-* 搭建overlay网络（flannel）
-![flannel](../assets/flannel.png)
-* 虚拟路由网络（calico）
-![calico](../assets/calico.png)
+    * 搭建overlay网络（flannel）
+    ![flannel](../assets/flannel.png)
+    * 虚拟路由网络（calico）
+    ![calico](../assets/calico.png)
 
 **k8s**
 1. 容器中如何访问service
-* clusterIp
-* dns
-
+    * clusterIp
+    * dns
 2. 外部如何访问service
-* NodePort
-* LoadBalancer
+    * NodePort
+    * LoadBalancer
 
 ### 6. kubernetes存储
 

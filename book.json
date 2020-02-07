@@ -1,7 +1,7 @@
 {
    "title": "Developer Blogs",
    "author": "QIU RONGJI",
-   "plugins": ["github", "splitter"],
+   "plugins": ["github", "splitter", "toggle-chapters"],
    "pluginsConfig": {
       "github": {
          "url": "https://github.com/Qskyline/developer-blogs.git"
